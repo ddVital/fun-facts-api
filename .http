@@ -1,0 +1,40 @@
+### Post
+POST http://localhost:3000/api/create
+Content-Type: application/json
+
+{
+  "fact": "Your new fact goes here",
+  "category": ["Category1", "Category2"],
+  "lang": "English"
+}
+
+### get
+POST http://localhost:3000/api/create-many
+Content-Type: application/json
+
+[
+  {
+    "fact": "The Earth is the only planet not named after a god.",
+    "category": ["Science", "Astronomy"],
+    "lang": "English"
+  },
+  {
+    "fact": "Bananas are berries, but strawberries aren't.",
+    "category": ["Food", "Botany"],
+    "lang": "English"
+  },
+  {
+    "fact": "Octopuses have three hearts.",
+    "category": ["Biology", "Marine Life"],
+    "lang": "English"
+  },
+  {
+    "fact": "The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.",
+    "category": ["History", "Warfare"],
+    "lang": "English"
+  }
+]
+
+### get
+GET http://localhost:3000/api/all?apiToken=6633d86277b448377cad205c
+Content-Type: application/json

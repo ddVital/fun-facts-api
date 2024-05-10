@@ -35,11 +35,28 @@ router.post("/create", async (req, res) => {
     { versionKey: false }
   );
 
+  
   try {
     const newFact = await fact.save();
     res.status(200).json(newFact);
   } catch (err) {
+    console.log(req.body);
     res.send(JSON.stringify({ message: err }, null, 2));
+  }
+});
+
+router.post("/create-many", async (req, res) => {
+  const facts = req.body.map(factData => ({
+    fact: factData.fact,
+    category: factData.category,
+    lang: factData.lang
+  }));
+
+  try {
+    const newFacts = await Fact.insertMany(facts);
+    res.status(200).json(newFacts);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
 

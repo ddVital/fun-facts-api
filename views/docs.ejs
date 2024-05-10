@@ -1,4 +1,296 @@
-<div class="docs">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#222329" />
+    <meta
+      name="description"
+      content="Learn wonderful facts for free with our API."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+
+    <title>Documentation</title>
+</head>
+<body>  
+  <div class="container">
+    <div class="toggle-container">
+        <input type="checkbox" id="themeToggle" class="toggle-checkbox">
+        <label for="themeToggle" class="toggle-label"></label>
+    </div>
+  </div>
+
+  <script>
+        const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('change', function() {
+        if(this.checked) {
+            body.classList.add('dark-theme');
+            document.documentElement.style.setProperty('--bg-color', '#151518');
+            document.documentElement.style.setProperty('--bg-secondary-color', '#31323a');
+            document.documentElement.style.setProperty('--text-color', '#d8d8d8');
+            document.documentElement.style.setProperty('--text-secondary-color', '#8a8a8a');
+            document.documentElement.style.setProperty('--accent-color', '#5ada87');
+            document.documentElement.style.setProperty('--toggle-bg-color', '#2196f3');
+            document.documentElement.style.setProperty('--toggle-bg-color-checked', '#dddddd');
+            document.documentElement.style.setProperty('--toggle-handle-color', '#222222');
+            document.documentElement.style.setProperty('--toggle-handle-transform', 'translateX(25px)');
+        } else {
+            body.classList.remove('dark-theme');
+            document.documentElement.style.setProperty('--bg-color', '#ffffff');
+            document.documentElement.style.setProperty('--bg-secondary-color', '#f5f5f5');
+            document.documentElement.style.setProperty('--text-color', '#101010');
+            document.documentElement.style.setProperty('--text-secondary-color', '#303030');
+            document.documentElement.style.setProperty('--accent-color', '#5ada87');
+            document.documentElement.style.setProperty('--toggle-bg-color', '#dddddd');
+            document.documentElement.style.setProperty('--toggle-bg-color-checked', '#2196f3');
+            document.documentElement.style.setProperty('--toggle-handle-color', '#ffffff');
+            document.documentElement.style.setProperty('--toggle-handle-transform', 'translateX(0)');
+        }
+    });
+  </script>
+
+
+  <main class="main">
+    <section class="docs">
+      <div class="sidebar">
+        <h2>Getting started</h2>
+        <ul class="sidebar__intro">
+          <li class="sidebar__item"><a href="#">Introduction</a></li>
+          <li class="sidebar__item"><a href="#">Quickstart</a></li>
+          <li class="sidebar__item"><a href="#">Authentication</a></li>
+        </ul>
+        <h2>Guides</h2>
+        <ul class="sidebar__guides">
+          <li class="sidebar__item"><a href="#">Get all</a></li>
+          <li class="sidebar__item"><a href="#">Get ID</a></li>
+          <li class="sidebar__item"><a href="#">Get tag</a></li>
+          <li class="sidebar__item"><a href="#">Get something</a></li>
+          <li class="sidebar__item"><a href="#">Get something else</a></li>
+        </ul>
+      </div>
+
+      <section class="docs__content">
+        
+        <h1>Welcome</h1>
+        <p>Welcome to the official documentation for the Fun Facts API, <a href="https://ddvital.ninja" class="">Be aware this is only a showcase project for my developer portfolio</a>. This comprehensive guide is designed to assist developers in integrating our powerful API into their applications seamlessly.</p>
+
+        <p>Here's some basic request example:</p>
+        <div class="code">
+          <header class="code__header">
+            Request
+          </header>
+          
+          <code class="code__content">
+            <pre>
+{
+  "count": 5,
+  "facts": [
+    {
+      "category": [
+        "Science",
+        "Astronomy"
+      ],
+      "_id": "6633daf3ebd0163998ac2840",
+      "fact": "The Earth is the only planet not named after a god.",
+      "lang": "English"
+    },
+    {
+      "category": [
+        "Food",
+        "Botany"
+      ],
+      "_id": "6633daf3ebd0163998ac2841",
+      "fact": "Bananas are berries, but strawberries aren't.",
+      "lang": "English"
+    },
+    {
+      "category": [
+        "Biology",
+        "Marine Life"
+      ],
+      "_id": "6633daf3ebd0163998ac2842",
+      "fact": "Octopuses have three hearts.",
+      "lang": "English"
+    },
+    {
+      "category": [
+        "History",
+        "Warfare"
+      ],
+      "_id": "6633daf3ebd0163998ac2843",
+      "fact": "The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.",
+      "lang": "English"
+    }
+    ...
+  ]
+}
+            </pre>
+          </code>
+
+        </div>
+
+        <hr>
+
+        <div id="quickstart">
+
+          <h3>Overview</h3>
+          <p>Our API provides access to a wide range of functionality, allowing developers to leverage various features in their projects. From managing user data to accessing real-time information, our API offers a robust set of endpoints to meet your application's needs.</p>
+          
+          
+          <h3>Authentication</h3>
+          <p>Authentication is required for most API endpoints to ensure the security and integrity of your data. We utilize <a href="/user/api-key" class="docs__link">API keys</a> to authenticate requests, which should be included in the header of each request you make to our API.</p>
+          <p>
+            Please, be aware if you try to call the api without an API key you'll get the following
+            error.
+          </p>
+          <code class="language-json code--error">
+            { "message": "API token authentication failed..." }
+          </code>
+          
+          <h3>Rate Limits</h3>
+          <p>To prevent abuse and ensure fair usage, our API imposes rate limits on the number of requests you can make within a certain timeframe. Please refer to our rate limit documentation for more information on the specific limits and how to handle rate limit errors gracefully in your applications. we also set a limite based on the deploy usage how <a href="https://github.com/ddVital/Fun-facts-api">it's a only a showcase project</a></p>
+          
+          <h3>Error Handling</h3>
+          <p>Our API returns informative error messages to help you troubleshoot and debug any issues that may arise during development. Understanding common error codes and how to handle them will streamline the integration process and improve the reliability of your applications.</p>
+          
+          <h3>Support</h3>
+          <p>If you encounter any difficulties or have questions about our API, our dedicated support team is here to assist you. Whether you need help with authentication, understanding endpoints, or optimizing your API usage, we're committed to providing timely and helpful support to ensure your success.</p>
+          
+          Explore the Documentation
+          Explore the documentation to discover all the endpoints, parameters, and response formats available in our API. Each section provides detailed information to help you make the most of our API and build powerful, feature-rich applications.
+          
+          Thank you for choosing Fun Facts API. We're excited to see what you'll create!
+        </div>
+          
+          <hr>
+          
+        <h1>Getting started</h1>
+        <p>
+          To get started with our API, you'll need an API key, which you can obtain by <a href="/user/api-key" class="docs__link">registering for an account</a> on our platform. Once you have your API key, you can begin making requests to our endpoints and unlock the full potential of our services.
+        </p>
+    
+        <p>
+          if you try to call the api without an API key you'll get the following
+          error.
+        </p>
+        <code class="code--error">
+          { "message": "API token authentication failed..." }
+        </code>
+      </section>
+
+      <hr>
+
+      <section class="docs__content">
+        <header class="content__header">
+          <span class="method">GET</span>
+          <p class="url">/api/all</p>
+        </header>
+        <h1>Get All</h1>
+    
+        <p>This endpoint allows you to retrive all the itens from the list of facts</p>
+    
+        <div class="content__parameter">
+          <h3>Parameters</h3>
+          <ul class="parameter">
+            <li class="parameter__item">
+              <div>
+                <span class="parameter__item-span">lang</span>
+                <span class="parameter__item-type">optional</span>
+              </div>
+              <p>You can use the lang parameter to get the output in your language.</p>
+            </li>
+            <li class="parameter__item">
+              <div>
+                <span class="parameter__item-span">category</span>
+                <span class="parameter__item-type">optional</span>
+              </div>
+              <p>You can use the category parameter to get the facts about that topic.</p>
+            </li>
+          </ul>
+        </div>
+    
+        <div class="code">
+          <header class="code__header">
+            Request
+          </header>
+          
+          <code class="code__content">
+            https://<%= url %>/api/fact?factId=60d79724fab161223c6dabcf&apiToken=<a href="/user/api-key"class="docs__link">{your_api_key}</a>
+          </code>
+        </div>
+      </section>
+
+      <hr>
+
+      <section class="docs__content">
+        <header class="content__header">
+          <span class="method">GET</span>
+          <p class="url">/api/fact</p>
+        </header>
+        <h1>Get by ID</h1>
+    
+        <p>This endpoint allows you to retrive a specific item from the list of facts</p>
+    
+        <div class="content__parameter">
+          <h3>Parameters</h3>
+          <ul class="parameter">
+            <li class="parameter__item">
+              <div>
+                <span class="parameter__item-span">FactId</span>
+                <span class="parameter__item-type">required</span>
+              </div>
+              <p>You can use the lang parameter to get the output in your language.</p>
+            </li>
+          </ul>
+        </div>
+    
+        <div class="code">
+          <header class="code__header">
+            Request
+          </header>
+          
+          <code class="code__content">
+            https://<%= url %>/api/fact?factId=60d79724fab161223c6dabcf&apiToken=<a href="/user/api-key"class="docs__link">{your_api_key}</a>
+          </code>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
+
+<!-- 
+  <section class="docs">
+  <div class="docs__sidebar">
+      <h2>Sidebar</h2>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+  </div>
+
   <section>
     <h1>Getting started</h1>
     <p>
@@ -94,4 +386,5 @@
       </code>
     </div>
   </section>
-</div>
+</section>
+ -->

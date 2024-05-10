@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("layout login", false);
+app.set("layout docs", false);
 
 app.use(express.json());
 app.use(
@@ -79,7 +80,7 @@ app.use("/", loginRoute);
 
 app.get("/", async (req, res) => {
   const fact = await Fact.aggregate([{ $sample: { size: 1 } }]);
-  res.render("home", { fact: fact[0].fact, title: "Home" });
+  // res.render("home", { fact: fact[0].fact, title: "Home" });
 });
 
 // reset the daily usage of the user at midnight.

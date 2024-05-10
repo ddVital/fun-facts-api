@@ -33,23 +33,29 @@
       <a href="/" class="logo"><h2>FUN FACTS</h2></a>
 
       <nav class="navbar">
-        <li class="navbar__item">
-          <a href="/">Home</a>
-        </li>
-        <li class="navbar__item">
-          <a href="/docs">Docs</a>
-        </li>
-        <li class="navbar__item">
-          <a href="https://github.com/ddVital/fun-facts-api#readme">About</a>
-        </li>
-        <li class="navbar__item">
-          <% if (user) { %>
-          <a href="/user" class="header__right">Profile</a>
-          <% } else { %>
-          <a href="/login" class="btn btn--auth">Try for Free</a>
-          <% } %>
-        </li>
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <a href="/">API</a>
+          </li>
+          <li class="navbar__item">
+            <a href="/docs">Documentation</a>
+          </li>
+          <li class="navbar__item">
+            <a href="/">Source Code</a>
+          </li>
+          <li class="navbar__item">
+            <a href="https://github.com/ddVital/fun-facts-api#readme">About</a>
+          </li>
+        </ul>
       </nav>
+
+      <div class="header__button-conteiner">
+        <% if (user) { %>
+          <a href="/user" class="header__right">Profile</a>
+        <% } else { %>
+          <a href="/login" class="btn btn--primary">Try for Free</a>
+        <% } %>
+      </div>
       <i class="fa fa-bars" id="bars"></i>
     </header>
 
