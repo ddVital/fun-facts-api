@@ -1,36 +1,116 @@
 <section class="hero">
   <div class="hero__content">
-    <h1>Fun facts</h1>
-    <p>Discovery wonderful things every time you call the api.</p>
-    <a class="btn" href="/docs" role="button">Get started</a>
-  </div>
-  <div>
-    <img src="/img/hero.svg" alt="test" class="hero__img" />
+    <h1 class="hero__content-title">Discover, Learn, Smile <span class="highlight">anywhere</span> at <span class="highlight">anytime</span>!</h1>
+    <p class="hero__content-paragraph">Discover wonderful things every time you call the API, and with each interaction, uncover a new layer of fascination.</p>
+    <div class="hero__content-actions">
+      <a class="btn btn--primary" href="/docs" role="button">Get started</a>
+      <a class="btn btn--secondary" href="/docs" role="button">
+        Explore the API
+        <i class="fa fa-chevron-right"></i>
+      </a>
+    </div>
   </div>
 </section>
+
 
 <section class="why">
-  <h2>Why FUN FACTS api?</h2>
+  <h2 class="why__title">Why should you use this Fun Facts API? </h2>
+  
+  <ul class="why__content">
+    <li class="why__content-item">
+      <img src="/img/reasons-to-use/fast.svg" alt="Why Fun Facts API?">
+      <h3 class="why__content-item-title">Easy to use</h3>
+      <p class="why__content-item-paragraph">Our API is designed to be easy to use, with clear and concise documentation to help you get started quickly.</p>
+    </li>
+    <li class="why__content-item">
+      <img src="/img/reasons-to-use/fast.svg" alt="Why Fun Facts API?">
+      <h3 class="why__content-item-title">Fast and reliable</h3>
+      <p class="why__content-item-paragraph">Our API is fast and reliable, with a 99.9% uptime guarantee, so you can trust that your requests will be processed quickly and accurately.</p>
+    </li>
+    <li class="why__content-item">
+      <img src="/img/reasons-to-use/fast.svg" alt="Why Fun Facts API?">
+      <h3 class="why__content-item-title">Free to use</h3>
+      <p class="why__content-item-paragraph">Our API is free to use, with no hidden fees or charges, so you can access our data without worrying about costs.</p>
+    </li>
+  </ul>
+</section>
 
-  <div class="why__details">
-    <div>
-      <img src="/img/easy-to-use.png" alt="easy" class="why__img" />
-      <h3>Easy</h3>
-      <p>Easy to use! learn how to use in only a few minutes.</p>
-    </div>
-    <div>
-      <img src="/img/fast.png" alt="fast" />
-      <h3>Fast ⚡</h3>
-      <p>learn wonderful things very fast with this api.</p>
-    </div>
-    <div>
-      <img src="/img/reliable.png" alt="reliable" />
-      <h3>Reliable 🤝</h3>
-      <p>All the facts are checked! learn only the truth.</p>
-    </div>
+
+<div class="call-example">
+  <img src="img/return-example.png" alt="">
+  <h4 class="call-example__content-title">Response example for the ID query</h4>
+</div>
+
+<div class="contribute">
+  <div class="contribude__cover">
+    <img src="/img/contribute.svg" alt="Contribute to the project">
   </div>
+
+  <div class="contribute__content">
+    <h2 class="contribute__content-title">Contribute to the project</h2>
+    <p class="contribute__content-paragraph">We are always looking for contributors to help us improve the project.  If you're interested in contributing, we encourage you to explore our GitHub repository. Your input is invaluable in driving our project forward.</p>
+    <p class="contribute__content-paragraph">We are always looking for contributors to help us improve the project.  If you're interested in contributing, we encourage you to explore our GitHub repository. Your input is invaluable in driving our project forward.</p>
+    <a class="btn btn--primary" href="https://github.com/ddvital/fun-facts-api" role="button" target="_blank">
+      GitHub repository
+    </a>
+  </div>
+</div>
+
+
+<section class="partners">
+  <h2 class="partners__title">Trusted by the world's most innovative organizations</h2>
+  
+  <div class="scroller" data-speed="fast">
+
+    <ul class="tag-list scroller__inner">
+      <li>
+        <img src="/img/partners/khan-academy.svg" alt="Khan academy">
+      </li>
+      <li>
+        <img src="/img/partners/khan-academy.svg" alt="Khan academy">
+      </li>
+      <li>
+        <img src="/img/partners/khan-academy.svg" alt="Khan academy">
+      </li>
+      <li>
+        <img src="/img/partners/khan-academy.svg" alt="Khan academy">
+      </li>
+      <li>
+        <img src="/img/partners/khan-academy.svg" alt="Khan academy">
+      </li>
+      <li>
+        <img src="/img/partners/khan-academy.svg" alt="Khan academy">
+      </li>
+    </ul>
+</div>
 </section>
 
-<section class="fact">
-  <h2>"<%= fact %>"</h2>
-</section>
+<script>
+  const scrollers = document.querySelectorAll(".scroller");
+
+// Check if the user prefers reduced motion
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // Add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it,
+    // add aria-hidden to it,
+    // and add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+
+</script>

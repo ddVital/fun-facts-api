@@ -28,44 +28,17 @@
 
     <title>Documentation</title>
 </head>
-<body>  
-  <div class="container">
-    <div class="toggle-container">
-        <input type="checkbox" id="themeToggle" class="toggle-checkbox">
-        <label for="themeToggle" class="toggle-label"></label>
-    </div>
+<body>
+  <div class="header-docs">
+    <h1 class="header-docs__logo">
+      FUN FACTS DEVELOPER
+    </h1>
+    <button id="theme-toggle" class="toggle-checkbox">Theme</button>
+    <!-- <div class="toggle-container">
+      <input type="checkbox" id="themeToggle" class="toggle-checkbox">
+      <label for="themeToggle" class="toggle-label"></label>
+    </div> -->
   </div>
-
-  <script>
-        const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-
-    themeToggle.addEventListener('change', function() {
-        if(this.checked) {
-            body.classList.add('dark-theme');
-            document.documentElement.style.setProperty('--bg-color', '#151518');
-            document.documentElement.style.setProperty('--bg-secondary-color', '#31323a');
-            document.documentElement.style.setProperty('--text-color', '#d8d8d8');
-            document.documentElement.style.setProperty('--text-secondary-color', '#8a8a8a');
-            document.documentElement.style.setProperty('--accent-color', '#5ada87');
-            document.documentElement.style.setProperty('--toggle-bg-color', '#2196f3');
-            document.documentElement.style.setProperty('--toggle-bg-color-checked', '#dddddd');
-            document.documentElement.style.setProperty('--toggle-handle-color', '#222222');
-            document.documentElement.style.setProperty('--toggle-handle-transform', 'translateX(25px)');
-        } else {
-            body.classList.remove('dark-theme');
-            document.documentElement.style.setProperty('--bg-color', '#ffffff');
-            document.documentElement.style.setProperty('--bg-secondary-color', '#f5f5f5');
-            document.documentElement.style.setProperty('--text-color', '#101010');
-            document.documentElement.style.setProperty('--text-secondary-color', '#303030');
-            document.documentElement.style.setProperty('--accent-color', '#5ada87');
-            document.documentElement.style.setProperty('--toggle-bg-color', '#dddddd');
-            document.documentElement.style.setProperty('--toggle-bg-color-checked', '#2196f3');
-            document.documentElement.style.setProperty('--toggle-handle-color', '#ffffff');
-            document.documentElement.style.setProperty('--toggle-handle-transform', 'translateX(0)');
-        }
-    });
-  </script>
 
 
   <main class="main">
@@ -149,7 +122,7 @@
 
         <hr>
 
-        <div id="quickstart">
+        <div id="quick-start">
 
           <h3>Overview</h3>
           <p>Our API provides access to a wide range of functionality, allowing developers to leverage various features in their projects. From managing user data to accessing real-time information, our API offers a robust set of endpoints to meet your application's needs.</p>
@@ -194,11 +167,10 @@
         <code class="code--error">
           { "message": "API token authentication failed..." }
         </code>
-      </section>
 
       <hr>
 
-      <section class="docs__content">
+      <section class="">
         <header class="content__header">
           <span class="method">GET</span>
           <p class="url">/api/all</p>
@@ -240,7 +212,7 @@
 
       <hr>
 
-      <section class="docs__content">
+      <section class="">
         <header class="content__header">
           <span class="method">GET</span>
           <p class="url">/api/fact</p>
@@ -271,6 +243,7 @@
             https://<%= url %>/api/fact?factId=60d79724fab161223c6dabcf&apiToken=<a href="/user/api-key"class="docs__link">{your_api_key}</a>
           </code>
         </div>
+      </section>
       </section>
     </section>
   </main>

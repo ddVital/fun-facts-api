@@ -15,6 +15,8 @@ const app = express();
 require("./config/passport")(passport);
 
 // import routes
+const homeRoute = require("./routes/home");
+const termsRoute = require("./routes/terms");
 const apiRoute = require("./routes/api");
 const docsRoute = require("./routes/docs");
 const loginRoute = require("./routes/auth");
@@ -76,7 +78,8 @@ app.use(function (req, res, next) {
 app.use("/api", apiRoute);
 app.use("/docs", docsRoute);
 app.use("/user", userRoute);
-app.use("/", loginRoute);
+app.use("/", termsRoute);
+app.use("/", homeRoute);
 
 app.get("/", async (req, res) => {
   const fact = await Fact.aggregate([{ $sample: { size: 1 } }]);

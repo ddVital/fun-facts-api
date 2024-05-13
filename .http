@@ -3,12 +3,16 @@ POST http://localhost:3000/api/create
 Content-Type: application/json
 
 {
-  "fact": "Your new fact goes here",
-  "category": ["Category1", "Category2"],
+  "fact": "Mike the Headless Chicken, also known as Miracle Mike, was a Wyandotte chicken that lived for 18 months without a head. On September 10, 1945, farmer Lloyd Olsen of Fruita, Colorado, was preparing Mike for dinner by chopping off his head. To Olsen's surprise, Mike survived the decapitation and continued to live, albeit headless. Amazed by Mike's resilience, Olsen decided to care for him, feeding him with a dropper directly into his esophagus. Mike became a celebrity, touring sideshows and earning an estimated $4,500 per month. He eventually succumbed to his headless condition on March 17, 1947, after choking on a piece of corn. Mike's legacy lives on as a symbol of survival against all odds.",
+  "category": ["Bizarre Facts", "Animal Facts"],
   "lang": "English"
 }
 
-### get
+### Get
+GET http://localhost:3000/api/fact?factId=66415cd9268f8817ec3d8f35&apiToken=6633d86277b448377cad205c
+Content-Type: application/json
+
+### create many
 POST http://localhost:3000/api/create-many
 Content-Type: application/json
 
