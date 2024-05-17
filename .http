@@ -8,7 +8,15 @@ Content-Type: application/json
   "lang": "English"
 }
 
-### Get
+### subscribe to newsletter
+POST http://localhost:3000/newsletter/subscribe
+Content-Type: application/json
+
+{
+  "email": "ddvital0@gmail.com"
+}
+
+### Get fact by id
 GET http://localhost:3000/api/fact?factId=66415cd9268f8817ec3d8f35&apiToken=6633d86277b448377cad205c
 Content-Type: application/json
 

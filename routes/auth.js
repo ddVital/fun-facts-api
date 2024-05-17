@@ -4,6 +4,7 @@ const passport = require("passport");
 // Load User model
 const User = require("../models/User");
 const { forwardAuthenticated } = require("../config/auth");
+const { validatePassword, validateEmail } = require("../utils/validateUserData");
 
 const router = express.Router();
 
@@ -12,39 +13,50 @@ router.get("/login", async (req, res) => {
 });
 
 router.get("/register", forwardAuthenticated, (req, res) =>
-  res.render("login", { openTab: "register", layout: "login" })
+  res.render("register", {layout: "register" })
 );
 
 // Register
 router.post("/register", (req, res) => {
   const { name, email, password } = req.body;
   let errors = [];
+  let invalidFields = [];
 
   if (!name || !email || !password) {
     errors.push({ msg: "Please enter all fields" });
+    invalidFields.push();
+  }
+
+  if (validateEmail(email) === false) {
+    errors.push({ msg: "Invalid email" });
+    invalidFields.push("email");
   }
 
   if (password.length < 8) {
-    errors.push({ msg: "Password must be at least 8 characters" });
+    errors.push({ msg: "This password is too easy, try again!" });
+    invalidFields.push("password");
   }
 
   if (errors.length > 0) {
-    console.log("errors");
-    res.render("login", {
+    res.render("register", {
       errors,
-      openTab: "register",
-      layout: "login",
+      email,
+      name,
+      invalidFields,
+      layout: "register",
     });
   } else {
     User.findOne({ email: email }).then((user) => {
       if (user) {
         errors.push({ msg: "Email already exists" });
-        res.render("login", {
+        invalidFields.push("email");
+
+        res.render("register", {
           errors,
           name,
           email,
-          openTab: "register",
-          layout: "login",
+          invalidFields,
+          layout: "register",
         });
       } else {
         const newUser = new User({

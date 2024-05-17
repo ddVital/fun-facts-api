@@ -1,15 +1,19 @@
 <section class="profile">
   <%- include ("./partials/sidebar", {active: "account"}); %>
 
-  <section>
-    <h2>Profile</h2>
-    <form action="/user" method="POST">
+  <section class="profile__content">
+    <h1 class="profile__content-title">Profile</h1>
+    <p class="profile__content-paragraph">Update and manage your account settings and profile information.</p>
+
+    <form action="/user" method="POST" id="updateForm">
       <input
         type="email"
         name="email"
         value="<%= user.email %>"
         placeholder="Email"
         autocomplete="off"
+        class="input"
+        id="updateEmail"
       />
       <input
         type="text"
@@ -17,14 +21,23 @@
         value="<%= user.name %>"
         placeholder="Name"
         autocomplete="off"
+        class="input"
+        id="updateName"
       />
-      <%- include ("./partials/messages"); %>
+      
+      <button class="btn btn--primary" id="updateButton">Update</button>
 
-      <button class="btn btn--large">Update</button>
+      <%- include ("./partials/messages"); %>
     </form>
+
     <hr />
-    <a href="/logout">Logout</a>
-    <hr />
-    <a href="/user/delete" class="alert">Delete Account</a>
+
+    <div class="profile__danger">
+      <h2 class="profile__danger-title">Delete account</h2>
+      <p class="profile__danger-paragraph">Please be sure before you request that we delete your account and remove your profile.</p>
+      <form action="user/delete" method="post" id="deleteAccountForm">
+        <button type="button" class="alert" id="deleteAccountButton">Delete Account</button>
+      </form>
+    </div>
   </section>
 </section>

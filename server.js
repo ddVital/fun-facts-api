@@ -21,8 +21,8 @@ const apiRoute = require("./routes/api");
 const docsRoute = require("./routes/docs");
 const loginRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
+const newsletterRoute = require("./routes/newsletter");
 const User = require("./models/User");
-const Fact = require("./models/Fact");
 
 // Static
 app.use(express.static(path.join(__dirname, "public")));
@@ -32,6 +32,7 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("layout login", false);
 app.set("layout docs", false);
+app.set("layout error404", false);
 
 app.use(express.json());
 app.use(
@@ -75,15 +76,23 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use("/newsletter", newsletterRoute);
 app.use("/api", apiRoute);
 app.use("/docs", docsRoute);
 app.use("/user", userRoute);
+app.use("/", loginRoute);
 app.use("/", termsRoute);
 app.use("/", homeRoute);
 
-app.get("/", async (req, res) => {
-  const fact = await Fact.aggregate([{ $sample: { size: 1 } }]);
-  // res.render("home", { fact: fact[0].fact, title: "Home" });
+// Custom middleware for handling 404 errors
+app.use((req, res, next) => {
+  res.status(404).render('error404', { title: '404 - Not Found', layout: false});
+});
+
+// Custom middleware for handling 500 errors
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render('error500', { title: '500 - Internal Server Error', layout: false });
 });
 
 // reset the daily usage of the user at midnight.

@@ -1,104 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <title>Members</title>
-  </head>
-  <body>
-    <div class="container" id="container">
-      <div class="form form-container sign-up-container">
-        <form action="/register" method="POST">
-          <h1>Create Account</h1>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            autocomplete="off"
-          />
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            autocomplete="off"
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            autocomplete="off"
-          />
+  <link rel="stylesheet" href="/styles/styles.css" />
+  <title>Members</title>
+</head>
+<body>
+  <main class="auth">
+		<div class="auth__container">
+			<h1 class="auth__container-title">Sign in</h1>
+			<p class="auth__container-paragraph">Welcome back! Sign in again and discover the world with our API. Each interaction reveals a new layer of fascination.</p>
 
-          <% if (openTab === 'register') { %>
-          <div><%- include ("./partials/register-messages"); %></div>
-          <% } %>
+      <form action="/login" method="POST" class="form" id="signInForm">
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          autocomplete="off"
+          class="input"
+          id="signInEmail"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          autocomplete="off"
+          class="input"
+          id="signInPassword"
+          maxlength="40"
+					minlength="8"
+          required
+        />
 
-          <button class="btn btn--large">Sign Up</button>
-          <p class="auth">have an account? <a href="/login">Sign in</a></p>
-        </form>
-      </div>
-      <div class="form form-container sign-in-container">
-        <form action="/login" method="POST">
-          <h1>Sign in</h1>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            autocomplete="off"
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            autocomplete="off"
-          />
+        <button class="btn btn--primary" id="signInButton">Sign In</button>
+        
+        <%- include ("./partials/messages"); %>
+      </form>
 
-          <% if (openTab === 'login') { %>
-          <div><%- include ("./partials/messages"); %></div>
-          <% } %>
-
-          <button class="btn btn--large">Sign In</button>
-
-          <p class="auth">
-            Don't have an account? <a href="/register">Sign Up</a>
-          </p>
-        </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <h1>Welcome Back!</h1>
-            <p class="text">
-              To keep connected with us please login with your personal info
-            </p>
-            <button class="btn btn--secondary ghost" id="signIn">
-              Sign In
-            </button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <h1>Hello, Friend!</h1>
-            <p class="text">
-              Enter your personal details and start journey with us
-            </p>
-            <button class="btn btn--secondary ghost" id="signUp">
-              Sign Up
-            </button>
-          </div>
-        </div>
-      </div>
+      <span class="separator">or</span>
+			<p class="">Don't have an account? <a href="/register">Sign Up</a></p>
     </div>
+	</main>
 
-    <script>
-      const open = "<%= openTab %>";
-    </script>
-    <script src="/js/main.js"></script>
-  </body>
+  <script src="/js/main.js"></script>
+</body>
 </html>

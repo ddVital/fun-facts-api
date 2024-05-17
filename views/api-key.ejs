@@ -1,27 +1,22 @@
 <section class="profile">
   <%- include ("./partials/sidebar", {active: "api"}); %>
-  <section>
-    <h2>Api key</h2>
+  <section class="profile__content">
+    <h2 class="profile__content-title">API key</h2>
 
-    <p>
-      We put limits and quotas on API requests to protect the system from
-      receiving more data than it can handle, and to ensure an equitable
-      distribution of the system resources. The limits and quotas are subject to
-      change.
+    <p class="profile__content-paragraph">
+      We impose limits and quotas on API requests to prevent the system from being overwhelmed by excessive data and to ensure fair allocation of system resources. Please note that these limits and quotas may be adjusted over time.
     </p>
-    <table>
-      <thead>
-        <tr>
-          <th>Key</th>
-          <th>Daily quota</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code><%= user.id %></code></td>
-          <td><%= user.dailyRequest %></td>
-        </tr>
-      </tbody>
-    </table>
+    
+    <div class="key">
+      <span class="key__value" id="apiKey"><%= user.id %></span>
+      <button class="key__copy" id="copyButton">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
+          </path>
+        </svg>
+      </button>
+    </div>
+
   </section>
 </section>

@@ -1,28 +1,45 @@
 <section class="profile">
   <%- include ("./partials/sidebar", {active: "security"}); %>
-  <section>
-    <h2>Change password</h2>
-    <form action="/user/security" method="POST">
+  
+  <section class="profile__content">
+    <h2 class="profile__content-title">Change password</h2>
+    <p class="profile__content-paragraph">Update your password to keep your account secure.</p>
+    
+    <form action="/user/security" method="POST" id="changePasswordForm">
       <input
         type="password"
         name="old"
         placeholder="Old Password"
         autocomplete="off"
+        minlength="8"
+        maxlength="40"
+        class="input"
+        required
       />
       <input
         type="password"
         name="password"
         placeholder="New Password"
         autocomplete="off"
+        minlength="8"
+        maxlength="40"
+        class="input"
+        required
       />
       <input
         type="password"
         name="confirmation"
         placeholder="new Password confirmation"
         autocomplete="off"
+        minlength="8"
+        maxlength="40"
+        class="input"
+        required
       />
+
       <%- include ("./partials/messages"); %>
-      <button class="btn btn--large">Update</button>
+      
+      <button class="btn btn--primary" id="changePasswordButton">Update</button>
     </form>
   </section>
 </section>

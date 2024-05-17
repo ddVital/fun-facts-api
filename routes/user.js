@@ -9,9 +9,9 @@ router.get("/", ensureAuthenticated, async (req, res) => {
   res.render("user", { title: "Profile" });
 });
 
-router.get("/delete", ensureAuthenticated, async (req, res) => {
+router.post("/delete", ensureAuthenticated, async (req, res) => {
   await User.findByIdAndDelete(req.user.id);
-  req.flash("success_msg", "Account Deleted");
+  req.flash("success_msg", "Account Deleted successfully! sorry to see you go, hope to see you soon!");
   res.redirect("/login");
 });
 
@@ -27,6 +27,8 @@ router.post("/", async (req, res) => {
   if (user && req.user.email !== email) {
     errors.push({ msg: "Email already exists" });
   }
+
+  console.log("santos--------------------", errors, "|||");
 
   if (errors.length > 0) {
     res.render("user", { errors });

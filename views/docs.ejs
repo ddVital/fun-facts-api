@@ -29,52 +29,103 @@
     <title>Documentation</title>
 </head>
 <body>
-  <div class="header-docs">
-    <h1 class="header-docs__logo">
-      FUN FACTS DEVELOPER
-    </h1>
-    <button id="theme-toggle" class="toggle-checkbox">Theme</button>
-    <!-- <div class="toggle-container">
-      <input type="checkbox" id="themeToggle" class="toggle-checkbox">
-      <label for="themeToggle" class="toggle-label"></label>
-    </div> -->
-  </div>
+  <header class="header" id="header">
+    <a href="/" class="logo">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
+        <path d="M21.3301 12.9099C21.4201 14.4599 20.7101 15.95 19.4401 16.86L20.2101 18.35C20.4401 18.8 20.4701 19.3299 20.2701 19.7999C20.0801 20.2699 19.6901 20.6399 19.2101 20.7999L18.4201 21.0499C18.0911 21.1603 17.7361 21.1667 17.4033 21.0683C17.0705 20.97 16.7761 20.7715 16.5601 20.5L14.4401 18C13.5501 17.85 12.7101 17.4699 12.0001 16.8999C11.5001 17.0499 11.0001 17.1299 10.5001 17.1299C9.62006 17.1299 8.74006 16.8599 8.00006 16.3399C7.47006 16.4999 6.93006 16.5699 6.38006 16.5599C5.59006 16.5699 4.81006 16.41 4.08006 16.11C3.37704 15.7969 2.77632 15.2923 2.34659 14.6539C1.91687 14.0155 1.67549 13.2691 1.65006 12.4999C1.57006 11.7799 1.69006 11.0499 2.00006 10.3899C1.71006 9.63995 1.68006 8.81995 1.93006 8.05995C2.30006 7.10995 3.00006 6.31995 3.87006 5.81995C4.45006 4.12995 6.08006 2.99995 7.87006 3.11995C9.47006 1.61995 11.9201 1.45995 13.7001 2.74995C14.1201 2.63995 14.5601 2.57995 15.0001 2.57995C16.3601 2.54995 17.6501 3.14995 18.5001 4.21995C20.5401 4.74995 22.0001 6.56995 22.0801 8.68995C22.1301 9.79995 21.8301 10.8899 21.2201 11.8199C21.2901 12.1799 21.3301 12.5399 21.3301 12.9099ZM16.3301 11.4999C16.9001 11.5699 17.3501 11.9999 17.3501 12.5699C17.3501 12.8352 17.2447 13.0895 17.0572 13.2771C16.8696 13.4646 16.6153 13.5699 16.3501 13.5699H15.7201C15.4001 14.4699 14.8401 15.2599 14.1001 15.8599C14.3501 15.9499 14.6101 15.9999 14.8701 16.0699C20.0001 15.9999 19.4001 12.8699 19.4001 12.8199C19.3872 12.4797 19.3073 12.1454 19.1651 11.8361C19.0229 11.5268 18.8211 11.2485 18.5713 11.0172C18.3215 10.786 18.0285 10.6062 17.7091 10.4883C17.3897 10.3704 17.0502 10.3166 16.7101 10.3299C16.4448 10.3299 16.1905 10.2246 16.003 10.0371C15.8154 9.84952 15.7101 9.59517 15.7101 9.32995C15.7101 9.06473 15.8154 8.81038 16.003 8.62284C16.1905 8.43531 16.4448 8.32995 16.7101 8.32995C17.9401 8.35995 19.1201 8.81995 20.0401 9.62995C20.0901 9.33995 20.1201 9.03995 20.1201 8.73995C20.0601 7.49995 19.5001 6.41995 17.2501 6.20995C16.0001 3.24995 12.8501 4.88995 12.8501 5.80995C12.8201 6.03995 13.0601 6.52995 13.1001 6.55995C13.3653 6.55995 13.6196 6.66531 13.8072 6.85284C13.9947 7.04038 14.1001 7.29473 14.1001 7.55995C14.1001 8.10995 13.6501 8.55995 13.1001 8.55995C12.5701 8.53995 12.0701 8.33995 11.6701 7.99995C11.1901 8.30995 10.6401 8.49995 10.0701 8.55995C9.50006 8.60995 9.03006 8.20995 9.00006 7.65995C8.98193 7.52937 8.99061 7.39646 9.02558 7.26934C9.06054 7.14223 9.12104 7.02357 9.2034 6.92063C9.28576 6.81768 9.38824 6.7326 9.50458 6.67059C9.62092 6.60858 9.74868 6.57093 9.88006 6.55995C10.0401 6.53995 10.8201 6.41995 10.8201 5.78995C10.8201 5.12995 11.0701 4.49995 11.5001 3.99995C10.5801 3.74995 9.59006 4.07995 8.59006 5.28995C6.75006 4.99995 6.00006 5.24995 5.45006 7.19995C4.50006 7.66995 4.00006 7.99995 3.78006 8.99995C4.86006 8.77995 5.97006 8.86995 7.00006 9.24995C7.50006 9.43995 7.78006 9.99995 7.59006 10.5399C7.40006 11.0599 6.82006 11.3199 6.30006 11.1299C5.57006 10.8099 4.75006 10.7899 4.00006 11.0699C3.68006 11.3399 3.68006 11.8999 3.68006 12.3399C3.68006 13.0799 4.05006 13.7699 4.68006 14.1699C5.21006 14.4399 5.80006 14.5799 6.39006 14.5699C6.24006 14.3099 6.11006 14.0399 6.00006 13.7599C5.92133 13.503 5.94531 13.2256 6.06695 12.986C6.18859 12.7464 6.39841 12.5633 6.65228 12.4752C6.90616 12.3871 7.18429 12.4009 7.42819 12.5137C7.67209 12.6265 7.86274 12.8295 7.96006 13.0799C8.36006 14.2199 9.38006 14.9999 10.5801 15.1299C11.9501 15.0599 13.1701 14.2499 13.7701 12.9999C14.0001 11.6199 15.1101 11.4999 16.3301 11.4999ZM18.3301 18.9699L17.7101 17.6699L17.0001 17.8299L18.0001 19.08L18.3301 18.9699ZM13.6801 10.3599C13.6887 10.1045 13.5993 9.8554 13.43 9.66384C13.2608 9.47228 13.0246 9.35281 12.7701 9.32995C12.0601 9.28995 11.3701 9.52995 10.8401 9.99995C10.2701 10.5799 9.97006 11.3799 10.0001 12.1899C10.0001 12.4552 10.1054 12.7095 10.293 12.8971C10.4805 13.0846 10.7348 13.1899 11.0001 13.1899C11.5701 13.1899 12.0001 12.7399 12.0001 12.1899C12.0001 11.9199 12.0701 11.6499 12.2301 11.4299C12.3501 11.3299 12.5001 11.2799 12.6601 11.2799C13.2101 11.3099 13.6801 10.8999 13.6801 10.3599Z" fill=""/>
+      </svg>          
+    </a>
 
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <a href="/">API</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="/docs#introduction">Documentation</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="/">Source Code</a>
+        </li>
+        <li class="nav__list-item">
+          <a href="https://github.com/ddVital/fun-facts-api#readme">About</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__btn">
+
+      <button id="theme-toggle" class="theme-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <% if (user) { %>
+        <a href="/user" class="">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+      <% } else { %>
+        <a href="/login" class="btn btn--primary btn--small">Sign in</a>
+      <% } %>
+    </div>
+
+    <button type="button" id="bars" role="menubar">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5.625C3 5.32663 3.11853 5.04048 3.3295 4.8295C3.54048 4.61853 3.82663 4.5 4.125 4.5H19.875C20.1734 4.5 20.4595 4.61853 20.6705 4.8295C20.8815 5.04048 21 5.32663 21 5.625C21 5.92337 20.8815 6.20952 20.6705 6.4205C20.4595 6.63147 20.1734 6.75 19.875 6.75H4.125C3.82663 6.75 3.54048 6.63147 3.3295 6.4205C3.11853 6.20952 3 5.92337 3 5.625ZM3 12C3 11.7016 3.11853 11.4155 3.3295 11.2045C3.54048 10.9935 3.82663 10.875 4.125 10.875H19.875C20.1734 10.875 20.4595 10.9935 20.6705 11.2045C20.8815 11.4155 21 11.7016 21 12C21 12.2984 20.8815 12.5845 20.6705 12.7955C20.4595 13.0065 20.1734 13.125 19.875 13.125H4.125C3.82663 13.125 3.54048 13.0065 3.3295 12.7955C3.11853 12.5845 3 12.2984 3 12ZM12 18.375C12 18.0766 12.1185 17.7905 12.3295 17.5795C12.5405 17.3685 12.8266 17.25 13.125 17.25H19.875C20.1734 17.25 20.4595 17.3685 20.6705 17.5795C20.8815 17.7905 21 18.0766 21 18.375C21 18.6734 20.8815 18.9595 20.6705 19.1705C20.4595 19.3815 20.1734 19.5 19.875 19.5H13.125C12.8266 19.5 12.5405 19.3815 12.3295 19.1705C12.1185 18.9595 12 18.6734 12 18.375Z" />
+      </svg>  
+    </button>
+  </header>
 
   <main class="main">
+
     <section class="docs">
       <div class="sidebar">
-        <h2>Getting started</h2>
+        <h4 class="sidebar__label">Getting started</h4>
         <ul class="sidebar__intro">
-          <li class="sidebar__item"><a href="#">Introduction</a></li>
-          <li class="sidebar__item"><a href="#">Quickstart</a></li>
-          <li class="sidebar__item"><a href="#">Authentication</a></li>
+          <li class="sidebar__item"><a href="#introduction">Introduction</a></li>
+          <li class="sidebar__item"><a href="#quick-start">Quickstart</a></li>
+          <li class="sidebar__item"><a href="#authentication">Authentication</a></li>
+          <li class="sidebar__item"><a href="#rate-limits">Rate limits</a></li>
+          <li class="sidebar__item"><a href="#support">Support</a></li>
         </ul>
-        <h2>Guides</h2>
+        <h4 class="sidebar__label">Guides</h4>
         <ul class="sidebar__guides">
-          <li class="sidebar__item"><a href="#">Get all</a></li>
-          <li class="sidebar__item"><a href="#">Get ID</a></li>
-          <li class="sidebar__item"><a href="#">Get tag</a></li>
-          <li class="sidebar__item"><a href="#">Get something</a></li>
-          <li class="sidebar__item"><a href="#">Get something else</a></li>
+          <li class="sidebar__item"><a href="#get-all">Get all</a></li>
+          <li class="sidebar__item"><a href="#get-id">Get ID</a></li>
+          <li class="sidebar__item"><a href="#create">Create Fact</a></li>
+          <li class="sidebar__item"><a href="#create-many">Create many facts</a></li>
         </ul>
       </div>
 
       <section class="docs__content">
         
-        <h1>Welcome</h1>
-        <p>Welcome to the official documentation for the Fun Facts API, <a href="https://ddvital.ninja" class="">Be aware this is only a showcase project for my developer portfolio</a>. This comprehensive guide is designed to assist developers in integrating our powerful API into their applications seamlessly.</p>
-
-        <p>Here's some basic request example:</p>
-        <div class="code">
-          <header class="code__header">
-            Request
-          </header>
+        
+        <section class="docs__section" id="introduction">        
+          <div class="note">
+            <i class="fa fa-info-circle"></i>
+                    
+            <span class="note__message">
+              This is a showcase project for my developer portfolio, for more information check <a href="https://ddvital.ninja/" class="docs__link" target="_blank">Here</a>.
+            </span>
+          </div>
           
-          <code class="code__content">
-            <pre>
+          <h1 class="docs__section-title">Welcome</h1>
+          <p class="docs__section-paragraph">Welcome to the official documentation for the Fun Facts API. This comprehensive guide is designed to assist developers in integrating our powerful API into their applications seamlessly.</p>
+
+          <p class="docs__section-paragraph">Here's some basic request example:</p>
+          <div class="code">
+            <header class="code__header">
+              Request
+            </header>
+            
+            <code class="code__content">
+              <pre>
 {
-  "count": 5,
+  "count": 1912,
   "facts": [
     {
       "category": [
@@ -119,65 +170,86 @@
           </code>
 
         </div>
+      </section>
+
+      <hr>
+
+        <section class="docs__section" id="quick-start">
+          <h3 class="docs__section-title">Overview</h3>
+          <p class="docs__section-paragraph">Our API provides access to a wide range of functionality, allowing developers to leverage various features in their projects. From managing user data to accessing real-time information, our API offers a robust set of endpoints to meet your application's needs.</p>
+          
+        </section>
 
         <hr>
 
-        <div id="quick-start">
-
-          <h3>Overview</h3>
-          <p>Our API provides access to a wide range of functionality, allowing developers to leverage various features in their projects. From managing user data to accessing real-time information, our API offers a robust set of endpoints to meet your application's needs.</p>
-          
-          
-          <h3>Authentication</h3>
-          <p>Authentication is required for most API endpoints to ensure the security and integrity of your data. We utilize <a href="/user/api-key" class="docs__link">API keys</a> to authenticate requests, which should be included in the header of each request you make to our API.</p>
-          <p>
+        <section class="docs__section" id="authentication">
+          <h3 class="docs__section-title">Authentication</h3>
+          <p class="docs__section-paragraph">Authentication is required for most API endpoints to ensure the security and integrity of your data. We utilize <a href="/user/api-key" class="docs__link">API keys</a> to authenticate requests, which should be included in the header of each request you make to our API.</p>
+          <p class="docs__section-paragraph">
             Please, be aware if you try to call the api without an API key you'll get the following
             error.
           </p>
           <code class="language-json code--error">
             { "message": "API token authentication failed..." }
           </code>
+        </section>
+
+        <hr>
+
+        <section class="docs__section" id="rate-limits">
+          <h3 class="docs__section-title">Rate Limits</h3>
+          <p class="docs__section-paragraph">To prevent abuse and ensure fair usage, our API imposes rate limits on the number of requests you can make within a certain timeframe. Please refer to our rate limit documentation for more information on the specific limits and how to handle rate limit errors gracefully in your applications. we also set a limite based on the deploy usage.</p>
+        </section>
+
+        <hr>
+
+        <section class="docs__section" id="support">
+          <h3 class="docs__section-title">Error Handling</h3>
+          <p class="docs__section-paragraph">Our API returns informative error messages to help you troubleshoot and debug any issues that may arise during development. Understanding common error codes and how to handle them will streamline the integration process and improve the reliability of your applications.</p>
           
-          <h3>Rate Limits</h3>
-          <p>To prevent abuse and ensure fair usage, our API imposes rate limits on the number of requests you can make within a certain timeframe. Please refer to our rate limit documentation for more information on the specific limits and how to handle rate limit errors gracefully in your applications. we also set a limite based on the deploy usage how <a href="https://github.com/ddVital/Fun-facts-api">it's a only a showcase project</a></p>
+          <hr>
+
+          <h3 class="docs__section-title">Support</h3>
+          <p class="docs__section-paragraph">If you encounter any difficulties or have questions about our API, our dedicated support team is here to assist you. Whether you need help with authentication, understanding endpoints, or optimizing your API usage, we're committed to providing timely and helpful support to ensure your success.</p>
           
-          <h3>Error Handling</h3>
-          <p>Our API returns informative error messages to help you troubleshoot and debug any issues that may arise during development. Understanding common error codes and how to handle them will streamline the integration process and improve the reliability of your applications.</p>
+          <p class="docs__section-paragraph">
+            Explore the documentation to discover all the endpoints, parameters, and response formats available in our API. Each section provides detailed information to help you make the most of our API and build powerful, feature-rich applications.
+          </p>
           
-          <h3>Support</h3>
-          <p>If you encounter any difficulties or have questions about our API, our dedicated support team is here to assist you. Whether you need help with authentication, understanding endpoints, or optimizing your API usage, we're committed to providing timely and helpful support to ensure your success.</p>
-          
-          Explore the Documentation
-          Explore the documentation to discover all the endpoints, parameters, and response formats available in our API. Each section provides detailed information to help you make the most of our API and build powerful, feature-rich applications.
-          
-          Thank you for choosing Fun Facts API. We're excited to see what you'll create!
-        </div>
+          <p class="docs__section-footnote">
+            Thank you for choosing Fun Facts API. We're excited to see what you'll create!
+          </p>
+        </section>
           
           <hr>
           
-        <h1>Getting started</h1>
-        <p>
-          To get started with our API, you'll need an API key, which you can obtain by <a href="/user/api-key" class="docs__link">registering for an account</a> on our platform. Once you have your API key, you can begin making requests to our endpoints and unlock the full potential of our services.
-        </p>
-    
-        <p>
-          if you try to call the api without an API key you'll get the following
-          error.
-        </p>
-        <code class="code--error">
-          { "message": "API token authentication failed..." }
-        </code>
+        <section class="docs__section" id="get-started">
+          <h1 class="docs__section-title">Getting started</h1>
+          <p class="docs__section-paragraph">
+            To get started with our API, you'll need an API key, which you can obtain by <a href="/user/api-key" class="docs__link">registering for an account</a> on our platform. Once you have your API key, you can begin making requests to our endpoints and unlock the full potential of our services.
+          </p>
+      
+          <p class="docs__section-paragraph">
+            if you try to call the api without an API key you'll get the following
+            error.
+          </p>
 
-      <hr>
+          <code class="code--error">
+            { "message": "API token authentication failed..." }
+          </code>
+        </section>
 
-      <section class="">
+        <hr>
+
+      <section class="docs__section" id="get-all">
         <header class="content__header">
           <span class="method">GET</span>
           <p class="url">/api/all</p>
         </header>
-        <h1>Get All</h1>
+
+        <h1 class="docs__section-title">Get All</h1>
     
-        <p>This endpoint allows you to retrive all the itens from the list of facts</p>
+        <p class="docs__section-paragraph">This endpoint allows you to retrive all the itens from the list of facts</p>
     
         <div class="content__parameter">
           <h3>Parameters</h3>
@@ -212,14 +284,14 @@
 
       <hr>
 
-      <section class="">
+      <section class="docs__section" id="get-id">
         <header class="content__header">
           <span class="method">GET</span>
           <p class="url">/api/fact</p>
         </header>
-        <h1>Get by ID</h1>
+        <h1 class="docs__section-title">Get by ID</h1>
     
-        <p>This endpoint allows you to retrive a specific item from the list of facts</p>
+        <p class="docs__section-paragraph">This endpoint allows you to retrive a specific item from the list of facts</p>
     
         <div class="content__parameter">
           <h3>Parameters</h3>
@@ -244,6 +316,112 @@
           </code>
         </div>
       </section>
+
+      <hr>
+
+      <!-- create -->
+      <section class="docs__section" id="create">
+        <header class="content__header">
+          <span class="method">POST</span>
+          <p class="url">/api/create-many</p>
+        </header>
+        <h1 class="docs__section-title">Create</h1>
+    
+        <p class="docs__section-paragraph">This endpoint allows you to create a item.</p>
+    
+        <div class="content__parameter">
+          <h3>Parameters</h3>
+          <ul class="parameter">
+            <li class="parameter__item">
+              <div>
+                <span class="parameter__item-span">ApiToken</span>
+                <span class="parameter__item-type">required</span>
+              </div>
+              <p>To create an item you need to add an valid api Token to your request</p>
+            </li>
+          </ul>
+        </div>
+    
+        <div class="code">
+          <header class="code__header">
+            Request
+          </header>
+          
+          <pre>
+            <code class="code__content">
+POST http://<%= url %>/api/create
+Content-Type: application/json
+
+{
+  "fact": "Mike the Headless Chicken, also known as Miracle Mike, was a Wyandotte chicken that lived for 18 months without a head. On September 10, 1945, farmer Lloyd Olsen of Fruita, Colorado, was preparing Mike for dinner by chopping off his head. To Olsen's surprise, Mike survived the decapitation and continued to live, albeit headless. Amazed by Mike's resilience, Olsen decided to care for him, feeding him with a dropper directly into his esophagus. Mike became a celebrity, touring sideshows and earning an estimated $4,500 per month. He eventually succumbed to his headless condition on March 17, 1947, after choking on a piece of corn. Mike's legacy lives on as a symbol of survival against all odds.",
+  "category": ["Bizarre Facts", "Animal Facts"],
+  "lang": "English"
+}
+            </code>
+          </pre>
+        </div>
+      </section>
+
+      <hr>
+
+      <!-- create many -->      
+      <section class="docs__section" id="create-many">
+        <header class="content__header">
+          <span class="method">POST</span>
+          <p class="url">/api/create-many</p>
+        </header>
+        <h1 class="docs__section-title">Create many</h1>
+    
+        <p class="docs__section-paragraph">This endpoint allows you to create a list of items at a single request.</p>
+    
+        <div class="content__parameter">
+          <h3>Parameters</h3>
+          <ul class="parameter">
+            <li class="parameter__item">
+              <div>
+                <span class="parameter__item-span">ApiToken</span>
+                <span class="parameter__item-type">required</span>
+              </div>
+              <p>To create an item you need to add an valid api Token to your request</p>
+            </li>
+          </ul>
+        </div>
+    
+        <div class="code">
+          <header class="code__header">
+            Request
+          </header>
+          
+          <pre>
+            <code class="code__content">
+POST http://<%= url %>/api/create-many
+Content-Type: application/json
+
+[
+  {
+    "fact": "The Earth is the only planet not named after a god.",
+    "category": ["Science", "Astronomy"],
+    "lang": "English"
+  },
+  {
+    "fact": "Bananas are berries, but strawberries aren't.",
+    "category": ["Food", "Botany"],
+    "lang": "English"
+  },
+  {
+    "fact": "Octopuses have three hearts.",
+    "category": ["Biology", "Marine Life"],
+    "lang": "English"
+  },
+  {
+    "fact": "The shortest war in history was between Britain and Zanzibar on August 27, 1896. Zanzibar surrendered after 38 minutes.",
+    "category": ["History", "Warfare"],
+    "lang": "English"
+  }
+]
+            </code>
+          </pre>
+        </div>
       </section>
     </section>
   </main>
@@ -252,112 +430,3 @@
 
 </body>
 </html>
-
-<!-- 
-  <section class="docs">
-  <div class="docs__sidebar">
-      <h2>Sidebar</h2>
-      <ul>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-      </ul>
-  </div>
-
-  <section>
-    <h1>Getting started</h1>
-    <p>
-      Please, use your <a href="/user/api-key" class="docs__link">API Key</a> in
-      every API call you make. Our platform only processes the API requests with
-      an API key included. The API key linked to your account is used to take
-      count of the calls you make to FunFacts platform. We reset the count every
-      day at midnight.
-    </p>
-
-    <p>
-      if you try to call the api without an API key you'll get the following
-      error.
-    </p>
-    <code class="example">
-      { "message": "API token authentication failed..." }
-    </code>
-  </section>
-
-  <hr />
-
-  <section>
-    <h1>Get all facts</h1>
-
-    <p>Get all facts or query for a specific topic and/or language.</p>
-
-    <div class="parameters">
-      <table>
-        <tbody>
-          <tr>
-            <th colspan="3">Parameters</th>
-          </tr>
-          <tr>
-            <td><code>lang</code></td>
-            <td>optional</td>
-            <td>
-              <p>
-                You can use the lang parameter to get the output in your
-                language.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td><code>Category</code></td>
-            <td>optional</td>
-            <td>
-              <p>
-                You can use the category parameter to get the facts about that
-                topic.
-              </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div>
-      <h4>API call example</h4>
-      <code class="example">
-        https://<%= url %>/api/all?category=boat&apiToken=<a href="/user/api-key" class="docs__link">{your_api_key}</a>
-      </code>
-    </div>
-  </section>
-
-  <hr />
-
-  <section>
-    <h1>Get specific facts</h1>
-
-    <p>If you want to get a specific fact.</p>
-
-    <table>
-      <tbody>
-        <tr>
-          <th colspan="3">Parameters</th>
-        </tr>
-        <tr>
-          <td><code>id</code></td>
-          <td>required</td>
-          <td>
-            <p>
-              You can use the lang parameter to get the output in your language.
-            </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div>
-      <h4>API call example</h4>
-      <code class="example">
-        https://<%= url %>/api/fact?factId=60d79724fab161223c6dabcf&apiToken=<a href="/user/api-key"class="docs__link">{your_api_key}</a>
-      </code>
-    </div>
-  </section>
-</section>
- -->

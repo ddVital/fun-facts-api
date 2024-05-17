@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+		rel="stylesheet"
+	/>
+
+	<link rel="stylesheet" href="/styles/styles.css" />
+	<title>Members</title>
+</head>
+<body>
+	<div class="item item--0"></div>
+	<div class="item item--1"></div>
+	<div class="item item--2"></div>
+	<div class="item item--3"></div>
+	
+	<main class="auth">
+		<div class="auth__container">
+			<h1 class="auth__container-title">Create Account</h1>
+			<p class="auth__container-paragraph">Register for free and discover the world with this API, with each interaction, uncover a new layer of fascination.</p>
+
+			<form action="/register" method="POST"class="form" id="signUpForm">
+				<input
+					type="email"
+					name="email"
+					placeholder="Email"
+					autocomplete="off"
+					class="input <%= typeof invalidFields !== 'undefined' && invalidFields.includes('email') ? 'input--error' : '' %>"
+					id="signUpEmail"
+					value="<%= typeof email !== 'undefined' ? email : '' %>"
+					required
+				/>
+				<input
+					type="text"
+					name="name"
+					placeholder="Name"
+					autocomplete="off"
+					class="input <%= typeof invalidFields !== 'undefined' && invalidFields.includes('name') ? 'input--error' : 'n' %>"
+					id="signUpName"
+					value="<%= typeof name !== 'undefined' ? name : '' %>"
+					required
+				/>
+				<input
+					type="password"
+					name="password"
+					placeholder="Password"
+					autocomplete="off"
+					class="input <%= typeof invalidFields !== 'undefined' && invalidFields.includes('password') ? 'input--error' : '' %>"
+					id="signUpPassword"
+					maxlength="40"
+					minlength="8"
+					required
+				/>
+				
+					<label class="agree">
+						<span class="agree__text">
+							I agree to the <a href="/terms-conditions" target="_blank" rel="noopener noreferrer">terms</a> and <a href="/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>
+						</span>
+						
+						<input type="checkbox" id="agreement">
+						<span class="checkmark"></span>
+					</label>
+
+				<button class="btn btn--primary" id="signUpButton">Sign Up</button>
+				
+				<%- include ("./partials/register-messages"); %>
+			</form>
+
+			<span class="separator">or</span>
+			<p class="">Already part of the team? <a href="/login">Sign in</a></p>
+		</div>
+	</main>
+	
+	<script src="/js/main.js"></script>
+</body>
+</html>
